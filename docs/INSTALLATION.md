@@ -17,8 +17,7 @@ Before installing, confirm that your WordPress site meets the following requirem
 
 ## Option 1: Install via WordPress Admin Dashboard (Recommended)
 
-1. Obtain the packaged plugin zip file from this repository:
-   - `dist/listeo-bulk-add-listings.zip`
+1. Download `listeo-bulk-add-listings.zip` from the latest [GitHub Release](https://github.com/justinallahyari/ActivityPie-Bulk-Add-Plugin/releases/latest) (or build it locally with `./scripts/build-zip.sh`, which outputs to `dist/listeo-bulk-add-listings.zip`).
 2. Log in to your WordPress Admin Dashboard (`/wp-admin/`).
 3. In the left sidebar, click **Plugins → Add New Plugin**.
 4. Click the **Upload Plugin** button near the top of the page.
@@ -29,7 +28,7 @@ Before installing, confirm that your WordPress site meets the following requirem
 
 ## Option 2: Install Manually via SFTP / File Manager
 
-1. Extract `dist/listeo-bulk-add-listings.zip` on your computer (or copy the `plugin/listeo-bulk-add-listings/` folder directly).
+1. Download and extract `listeo-bulk-add-listings.zip` from the latest [GitHub Release](https://github.com/justinallahyari/ActivityPie-Bulk-Add-Plugin/releases/latest) (or copy the `plugin/listeo-bulk-add-listings/` folder directly).
 2. Upload the `listeo-bulk-add-listings` folder to:
    ```text
    /wp-content/plugins/listeo-bulk-add-listings/
@@ -57,7 +56,7 @@ Before installing, confirm that your WordPress site meets the following requirem
 
 ## Updating / Upgrading the Plugin
 
-When a new version of `dist/listeo-bulk-add-listings.zip` is generated (for example, after adding a new CSV column or updating validation rules):
+When a new release of `listeo-bulk-add-listings.zip` is published on [GitHub Releases](https://github.com/justinallahyari/ActivityPie-Bulk-Add-Plugin/releases) (for example, after adding a new CSV column or updating validation rules):
 
 1. Create a quick backup of your site (e.g., via UpdraftPlus or WPvivid) if deploying major changes.
 2. In WordPress Admin, go to **Plugins → Add New Plugin → Upload Plugin**.

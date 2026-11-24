@@ -26,10 +26,8 @@ ActivityPie-Bulk-Add-Plugin/
 │   └── listeo-bulk-add-listings/
 │       ├── listeo-bulk-add-listings.php   # Main WordPress plugin source
 │       └── example-template.csv           # Static sample CSV template
-├── dist/
-│   └── listeo-bulk-add-listings.zip       # Pre-packaged WordPress plugin zip ready for upload
 ├── scripts/
-│   └── build-zip.sh                       # Script to rebuild dist/listeo-bulk-add-listings.zip
+│   └── build-zip.sh                       # Script to build dist/listeo-bulk-add-listings.zip (ignored by git; published via GitHub Releases)
 ├── docs/
 │   ├── INSTALLATION.md                    # How to install, upgrade, and uninstall the plugin
 │   ├── USER_GUIDE.md                      # How to prepare CSVs, upload listings, and fix errors
@@ -55,7 +53,7 @@ ActivityPie-Bulk-Add-Plugin/
 
 ## Quick Start
 
-1. Download [`dist/listeo-bulk-add-listings.zip`](dist/listeo-bulk-add-listings.zip).
+1. Download `listeo-bulk-add-listings.zip` from the latest [GitHub Release](https://github.com/justinallahyari/ActivityPie-Bulk-Add-Plugin/releases/latest) (or run `./scripts/build-zip.sh` locally).
 2. In WordPress Admin, go to **Plugins → Add New → Upload Plugin**, choose the `.zip` file, click **Install Now**, and click **Activate Plugin**.
 3. Navigate to **Listings → Bulk Add Listings**.
 4. Click **Download Example Template (.csv)**, fill in your listings, select the listing author, upload your CSV, and click **Validate & Bulk Add Pending Listings**.

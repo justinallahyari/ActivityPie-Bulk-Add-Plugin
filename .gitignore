@@ -7,6 +7,9 @@ Thumbs.db
 .idea/
 .vscode/
 
+# Build artifacts (published via GitHub Releases)
+dist/
+
 # Temporary / debug files
 *.log
 *.tmp

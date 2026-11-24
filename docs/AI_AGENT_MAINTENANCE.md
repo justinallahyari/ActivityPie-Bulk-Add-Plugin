@@ -13,7 +13,7 @@ In addition to the plugin source code, this repository includes dedicated contex
 - [`ai-context/environment-profile.json`](../ai-context/environment-profile.json) — Machine-readable snapshot of your WordPress version, PHP version, active Listeo listing types, taxonomies, regions, and custom fields.
 - [`ai-context/field-mappings.json`](../ai-context/field-mappings.json) — Machine-readable mapping of every CSV column to its exact WordPress/Listeo meta key, taxonomy, and validation rule.
 - [`ai-context/listeo-core-reference.md`](../ai-context/listeo-core-reference.md) — Technical reference of Listeo Core's `listing` post type, meta keys, CMB2 tabs, and admin hooks.
-- [`scripts/build-zip.sh`](../scripts/build-zip.sh) — One-command packaging script that rebuilds `dist/listeo-bulk-add-listings.zip`.
+- [`scripts/build-zip.sh`](../scripts/build-zip.sh) — One-command packaging script that builds `dist/listeo-bulk-add-listings.zip` locally (`dist/` is git-ignored; zips are uploaded to GitHub Releases).
 
 ---
 
@@ -26,10 +26,10 @@ In addition to the plugin source code, this repository includes dedicated contex
    - Bumping the plugin `Version:` header (e.g., `1.0.0` → `1.1.0`)
    - Updating `plugin/listeo-bulk-add-listings/example-template.csv` (if CSV columns changed)
    - Updating `ai-context/field-mappings.json` and `docs/USER_GUIDE.md` so docs stay in sync
-   - Running `./scripts/build-zip.sh` to regenerate `dist/listeo-bulk-add-listings.zip`
+   - Running `./scripts/build-zip.sh` to build `dist/listeo-bulk-add-listings.zip` locally
 4. **Review the changes** (`git diff`) and verify PHP syntax if PHP is installed locally (`php -l plugin/listeo-bulk-add-listings/listeo-bulk-add-listings.php`).
-5. **Commit and push** your changes to GitHub so you always have version history and can roll back if needed.
-6. **Upload the rebuilt zip** (`dist/listeo-bulk-add-listings.zip`) in WordPress under **Plugins → Add New → Upload Plugin → Replace current with uploaded**.
+5. **Commit, push, and publish a GitHub Release** (e.g., `gh release create v1.1.0 dist/listeo-bulk-add-listings.zip --title "v1.1.0" --generate-notes`) so the zip is versioned cleanly without bloating git history.
+6. **Upload the release zip** (`listeo-bulk-add-listings.zip`) in WordPress under **Plugins → Add New → Upload Plugin → Replace current with uploaded**.
 7. **Test with a small 1-row CSV** before importing a large batch.
 
 ---
