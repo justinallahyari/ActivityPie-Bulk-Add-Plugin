@@ -1,0 +1,221 @@
+{
+  "schema_version": "1.0.0",
+  "plugin_version": "1.0.0",
+  "validation_mode": "all_or_nothing",
+  "ignored_legacy_headers": ["title"],
+  "default_post_properties": {
+    "post_type": "listing",
+    "post_status": "pending",
+    "comment_status": "open"
+  },
+  "default_meta_initialized": {
+    "_featured": "0",
+    "listeo-avg-rating": "0",
+    "_listing_views_count": "0"
+  },
+  "columns": [
+    {
+      "csv_header": "Listing name",
+      "normalized_header": "listing name",
+      "aliases": [],
+      "required": true,
+      "targets": [
+        { "type": "post_field", "key": "post_title" },
+        { "type": "post_field", "key": "post_name", "transform": "sanitize_title" },
+        { "type": "post_meta", "key": "listing_title" }
+      ],
+      "sanitization": "sanitize_text_field",
+      "validation": "non_empty_string"
+    },
+    {
+      "csv_header": "Listing type",
+      "normalized_header": "listing type",
+      "aliases": ["listing_type", "_listing_type"],
+      "required": true,
+      "targets": [
+        { "type": "post_meta", "key": "_listing_type" },
+        { "type": "post_meta", "key": "listing_type" }
+      ],
+      "sanitization": "sanitize_key",
+      "validation": "must_match_active_listeo_listing_type_slug_or_name"
+    },
+    {
+      "csv_header": "category",
+      "normalized_header": "category",
+      "aliases": [],
+      "required": true,
+      "targets": [
+        { "type": "taxonomy", "taxonomy": "listing_category", "multi_value_delimiters": [",", ";", "|"] }
+      ],
+      "sanitization": "intval_term_ids",
+      "validation": "all_terms_must_exist_by_name_slug_or_id"
+    },
+    {
+      "csv_header": "Keywords",
+      "normalized_header": "keywords",
+      "aliases": [],
+      "required": false,
+      "targets": [
+        { "type": "post_meta", "key": "keywords" }
+      ],
+      "sanitization": "sanitize_text_field",
+      "validation": "optional_string"
+    },
+    {
+      "csv_header": "Description",
+      "normalized_header": "description",
+      "aliases": [],
+      "required": false,
+      "targets": [
+        { "type": "post_field", "key": "post_content" },
+        { "type": "post_meta", "key": "listing_description" }
+      ],
+      "sanitization": "wp_kses_post",
+      "validation": "optional_html_or_text"
+    },
+    {
+      "csv_header": "Video embed",
+      "normalized_header": "video embed",
+      "aliases": [],
+      "required": false,
+      "targets": [
+        { "type": "post_meta", "key": "_video" }
+      ],
+      "sanitization": "sanitize_textarea_field",
+      "validation": "optional_string"
+    },
+    {
+      "csv_header": "Phone",
+      "normalized_header": "phone",
+      "aliases": [],
+      "required": false,
+      "targets": [
+        { "type": "post_meta", "key": "_phone" }
+      ],
+      "sanitization": "sanitize_text_field",
+      "validation": "optional_string"
+    },
+    {
+      "csv_header": "Website",
+      "normalized_header": "website",
+      "aliases": [],
+      "required": false,
+      "targets": [
+        { "type": "post_meta", "key": "_website" }
+      ],
+      "sanitization": "esc_url_raw",
+      "validation": "optional_valid_url_auto_prepend_https"
+    },
+    {
+      "csv_header": "Email",
+      "normalized_header": "email",
+      "aliases": [],
+      "required": false,
+      "targets": [
+        { "type": "post_meta", "key": "_email" }
+      ],
+      "sanitization": "sanitize_email",
+      "validation": "optional_wp_is_email"
+    },
+    {
+      "csv_header": "FaceBook",
+      "normalized_header": "facebook",
+      "aliases": [],
+      "required": false,
+      "targets": [
+        { "type": "post_meta", "key": "_facebook" }
+      ],
+      "sanitization": "sanitize_text_field",
+      "validation": "optional_string"
+    },
+    {
+      "csv_header": "Youtube",
+      "normalized_header": "youtube",
+      "aliases": [],
+      "required": false,
+      "targets": [
+        { "type": "post_meta", "key": "_youtube" }
+      ],
+      "sanitization": "sanitize_text_field",
+      "validation": "optional_string"
+    },
+    {
+      "csv_header": "instagram",
+      "normalized_header": "instagram",
+      "aliases": [],
+      "required": false,
+      "targets": [
+        { "type": "post_meta", "key": "_instagram" }
+      ],
+      "sanitization": "sanitize_text_field",
+      "validation": "optional_string"
+    },
+    {
+      "csv_header": "Address",
+      "normalized_header": "address",
+      "aliases": [],
+      "required": false,
+      "targets": [
+        { "type": "post_meta", "key": "_address" },
+        { "type": "post_meta", "key": "_friendly_address" }
+      ],
+      "sanitization": "sanitize_text_field",
+      "validation": "optional_string"
+    },
+    {
+      "csv_header": "Region",
+      "normalized_header": "region",
+      "aliases": [],
+      "required": false,
+      "targets": [
+        { "type": "taxonomy", "taxonomy": "region", "multi_value_delimiters": [",", ";", "|"] }
+      ],
+      "sanitization": "intval_term_ids",
+      "validation": "if_provided_all_terms_must_exist_by_name_slug_or_id"
+    },
+    {
+      "csv_header": "Longitude",
+      "normalized_header": "longitude",
+      "aliases": [],
+      "required": false,
+      "targets": [
+        { "type": "post_meta", "key": "_geolocation_long" }
+      ],
+      "sanitization": "sanitize_text_field",
+      "validation": "optional_numeric_between_-180_and_180"
+    },
+    {
+      "csv_header": "latitude",
+      "normalized_header": "latitude",
+      "aliases": [],
+      "required": false,
+      "targets": [
+        { "type": "post_meta", "key": "_geolocation_lat" }
+      ],
+      "sanitization": "sanitize_text_field",
+      "validation": "optional_numeric_between_-90_and_90"
+    },
+    {
+      "csv_header": "Listing Timezone",
+      "normalized_header": "listing timezone",
+      "aliases": [],
+      "required": false,
+      "targets": [
+        { "type": "post_meta", "key": "_listing_timezone" }
+      ],
+      "sanitization": "sanitize_text_field",
+      "validation": "optional_iana_timezone_or_wp_utc_offset"
+    },
+    {
+      "csv_header": "Policy",
+      "normalized_header": "policy",
+      "aliases": [],
+      "required": false,
+      "targets": [
+        { "type": "post_meta", "key": "_service_cancellation_refund_policy" }
+      ],
+      "sanitization": "wp_kses_post",
+      "validation": "optional_html_or_text"
+    }
+  ]
+}

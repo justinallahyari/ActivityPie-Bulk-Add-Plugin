@@ -1,0 +1,105 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ActivityPie-Bulk-Add-Plugin",
+  "plugin": {
+    "name": "Listeo Bulk Add Listings",
+    "slug": "listeo-bulk-add-listings",
+    "main_file": "plugin/listeo-bulk-add-listings/listeo-bulk-add-listings.php",
+    "version": "1.0.0",
+    "admin_parent_menu": "edit.php?post_type=listing",
+    "admin_page_slug": "listeo-bulk-add-listings",
+    "required_capability": "manage_options",
+    "created_post_status": "pending"
+  },
+  "wordpress_environment": {
+    "wordpress_version": "6.9.x",
+    "php_version": "8.3",
+    "database": "MariaDB 11.8",
+    "web_server": "LiteSpeed",
+    "permalink_structure": "/%postname%/",
+    "default_timezone": "Asia/Taipei",
+    "locale": "en_US",
+    "active_theme": {
+      "name": "Listeo",
+      "slug": "listeo-2",
+      "version": "2.0.36"
+    },
+    "notable_active_plugins": [
+      { "name": "Listeo-Core", "version": "2.0.35", "role": "Core listing CPT, taxonomies, meta boxes, bookings" },
+      { "name": "Listeo - Forms&Fields Editor", "version": "2.0.26", "role": "Manages custom listing fields per tab/type" },
+      { "name": "CMB2", "version": "2.11.0", "role": "Renders listing meta boxes in wp-admin" },
+      { "name": "WooCommerce", "version": "10.7.0", "role": "Payments & booking products" },
+      { "name": "Dokan", "version": "4.3.3", "role": "Multi-vendor marketplace" },
+      { "name": "Admin Menu Editor", "version": "1.15", "role": "Customizes wp-admin sidebar menus" },
+      { "name": "LiteSpeed Cache", "version": "7.6.2", "role": "Page/object caching" },
+      { "name": "WP Activity Log", "version": "5.6.3.1", "role": "Audits admin actions" }
+    ]
+  },
+  "listeo_configuration": {
+    "post_type": "listing",
+    "active_listing_types": [
+      {
+        "slug": "service",
+        "display_name": "Time-Slot Booking",
+        "is_default": true,
+        "features": ["single_day_booking", "time_slots", "addon_services", "availability_calendar"]
+      },
+      {
+        "slug": "multi-day-rental",
+        "display_name": "Multi-Day Rental",
+        "is_default": false,
+        "features": ["date_range_booking", "start_end_time_picker", "addon_services", "availability_calendar", "custom_taxonomy"]
+      }
+    ],
+    "inactive_listing_types": [
+      "adventure",
+      "art",
+      "culture",
+      "education",
+      "sport",
+      "rental",
+      "event",
+      "classifieds"
+    ],
+    "taxonomies": {
+      "listing_category": {
+        "purpose": "Global listing categories",
+        "terms": ["Adventure", "Art", "Culture", "Education", "Sport"]
+      },
+      "listing_feature": {
+        "purpose": "Listing features assigned to categories",
+        "terms": ["Free Parking", "Free Wi-Fi", "Insurance Included", "Pet Friendly", "Vegan"]
+      },
+      "region": {
+        "purpose": "Geographic regions (Taiwan cities/counties)",
+        "terms": [
+          "Changhua", "Chiayi", "Green Island", "Hsinchu", "Hualien",
+          "Kaohsiung", "Keelung", "Kinmen", "Matsu", "Miaoli",
+          "Nantou", "New Taipei", "Orchid Island", "Penghu", "Pingtung",
+          "Taichung", "Tainan", "Taipei", "Taitung", "Taoyuan",
+          "Yilan", "Yunlin"
+        ]
+      }
+    },
+    "custom_fields_in_listeo_editor": {
+      "service_tab": [
+        {
+          "label": "Service-Cancellation & Refund Policy",
+          "meta_key": "_service_cancellation_refund_policy",
+          "mapped_in_csv": true,
+          "csv_column": "Policy"
+        }
+      ],
+      "contact_tab_additions": [
+        { "label": "Bank Name", "mapped_in_csv": false },
+        { "label": "Bank Account Number", "mapped_in_csv": false },
+        { "label": "Company Number", "mapped_in_csv": false },
+        { "label": "Language Support", "mapped_in_csv": false }
+      ],
+      "custom_tab_hidden": [
+        { "label": "Example field", "meta_key": "_example", "mapped_in_csv": false },
+        { "label": "Cancellation & Refund Policy", "mapped_in_csv": false }
+      ]
+    }
+  }
+}

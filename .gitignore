@@ -1,0 +1,14 @@
+# OS & editor artifacts
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Temporary / debug files
+*.log
+*.tmp
+node_modules/
+vendor/
