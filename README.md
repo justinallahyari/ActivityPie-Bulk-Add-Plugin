@@ -29,9 +29,10 @@ ActivityPie-Bulk-Add-Plugin/
 ├── scripts/
 │   └── build-zip.sh                       # Script to build dist/listeo-bulk-add-listings.zip (ignored by git; published via GitHub Releases)
 ├── docs/
-│   ├── INSTALLATION.md                    # How to install, upgrade, and uninstall the plugin
-│   ├── USER_GUIDE.md                      # How to prepare CSVs, upload listings, and fix errors
-│   └── AI_AGENT_MAINTENANCE.md            # How to update or extend this plugin using an AI agent
+│   ├── ActivityPie-Bulk-Add-Listings-Release-v1.0.0.docx  # Client release document (plugin changes, Time-Slot Booking form guide & plugin list)
+│   ├── INSTALLATION.md                                    # How to install, upgrade, and uninstall the plugin
+│   ├── USER_GUIDE.md                                      # How to prepare CSVs, upload listings, and fix errors
+│   └── AI_AGENT_MAINTENANCE.md                            # How to update or extend this plugin using an AI agent
 └── ai-context/
     ├── environment-profile.json           # Target WordPress + Listeo Core environment schema
     ├── field-mappings.json                # Machine-readable CSV column -> Listeo field mappings
@@ -44,6 +45,7 @@ ActivityPie-Bulk-Add-Plugin/
 
 | Document | Audience | Purpose |
 |---|---|---|
+| [`docs/ActivityPie-Bulk-Add-Listings-Release-v1.0.0.docx`](docs/ActivityPie-Bulk-Add-Listings-Release-v1.0.0.docx) | Client / Stakeholders | Full release report: plugin changes, Time-Slot Booking form diff & recreation guide, and updated plugin inventory |
 | [`docs/INSTALLATION.md`](docs/INSTALLATION.md) | Site Admins | Install, update, verify, or uninstall the plugin in WordPress |
 | [`docs/USER_GUIDE.md`](docs/USER_GUIDE.md) | Content / Ops Team | Download the CSV template, format data, upload listings, and resolve validation errors |
 | [`docs/AI_AGENT_MAINTENANCE.md`](docs/AI_AGENT_MAINTENANCE.md) | Client / Developers | How to safely request plugin updates using an AI coding agent |

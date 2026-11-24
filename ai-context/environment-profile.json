@@ -1,5 +1,6 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
+  "last_verified": "2026-11-23",
   "project": "ActivityPie-Bulk-Add-Plugin",
   "plugin": {
     "name": "Listeo Bulk Add Listings",
@@ -12,9 +13,9 @@
     "created_post_status": "pending"
   },
   "wordpress_environment": {
-    "wordpress_version": "6.9.x",
-    "php_version": "8.3",
-    "database": "MariaDB 11.8",
+    "wordpress_version": "6.9.12",
+    "php_version": "8.3.37",
+    "database": "MariaDB 11.8.9",
     "web_server": "LiteSpeed",
     "permalink_structure": "/%postname%/",
     "default_timezone": "Asia/Taipei",
@@ -24,15 +25,67 @@
       "slug": "listeo-2",
       "version": "2.0.36"
     },
-    "notable_active_plugins": [
-      { "name": "Listeo-Core", "version": "2.0.35", "role": "Core listing CPT, taxonomies, meta boxes, bookings" },
-      { "name": "Listeo - Forms&Fields Editor", "version": "2.0.26", "role": "Manages custom listing fields per tab/type" },
-      { "name": "CMB2", "version": "2.11.0", "role": "Renders listing meta boxes in wp-admin" },
-      { "name": "WooCommerce", "version": "10.7.0", "role": "Payments & booking products" },
-      { "name": "Dokan", "version": "4.3.3", "role": "Multi-vendor marketplace" },
-      { "name": "Admin Menu Editor", "version": "1.15", "role": "Customizes wp-admin sidebar menus" },
-      { "name": "LiteSpeed Cache", "version": "7.6.2", "role": "Page/object caching" },
-      { "name": "WP Activity Log", "version": "5.6.3.1", "role": "Audits admin actions" }
+    "plugins_summary": {
+      "total_standard": 45,
+      "active": 44,
+      "inactive": 1,
+      "must_use": 1,
+      "drop_ins": 1
+    },
+    "active_plugins": [
+      { "name": "ActivityPie Listings Dashboard", "version": "1.2.0" },
+      { "name": "Admin Menu Editor", "version": "1.15" },
+      { "name": "All in One SEO", "version": "4.9.7.2" },
+      { "name": "All-In-One Security (AIOS)", "version": "5.4.6" },
+      { "name": "Autocomplete WooCommerce Orders", "version": "3.5.8" },
+      { "name": "Breadcrumb NavXT", "version": "7.5.1" },
+      { "name": "Broken Link Checker by AIOSEO", "version": "1.2.10" },
+      { "name": "CMB2", "version": "2.11.0" },
+      { "name": "CMB2 Field Slider", "version": "1.1.2" },
+      { "name": "Contact Form 7", "version": "6.1.5" },
+      { "name": "Contact Form 7 - Dynamic Text Extension", "version": "5.0.5" },
+      { "name": "Dokan", "version": "4.3.3" },
+      { "name": "Duplicate Page", "version": "4.5.4" },
+      { "name": "Elementor", "version": "4.0.8" },
+      { "name": "Folders", "version": "3.1.6" },
+      { "name": "Google for WooCommerce", "version": "2.9.12" },
+      { "name": "GTranslate", "version": "3.0.8" },
+      { "name": "Inactive Logout", "version": "3.6.1" },
+      { "name": "Kirki", "version": "6.0.9" },
+      { "name": "Listeo - Forms&Fields Editor", "version": "2.0.26" },
+      { "name": "Listeo Activator", "version": "1.0" },
+      { "name": "Listeo Bulk Add Listings", "version": "1.0.0" },
+      { "name": "Listeo Elementor", "version": "2.0.24" },
+      { "name": "Listeo Shortcodes", "version": "1.5.22" },
+      { "name": "Listeo SMS Notifications & OTP Verification", "version": "1.1.5" },
+      { "name": "Listeo-Core - Directory Plugin by Purethemes", "version": "2.0.35" },
+      { "name": "LiteSpeed Cache", "version": "7.6.2" },
+      { "name": "Nextend Social Login", "version": "3.1.23" },
+      { "name": "OptinMonster", "version": "2.16.19" },
+      { "name": "Purethemes.net CPT", "version": "1.3" },
+      { "name": "Shortcode in Menus", "version": "3.5.1" },
+      { "name": "Simple CAPTCHA Alternative with Cloudflare Turnstile", "version": "1.39.1" },
+      { "name": "Simple Custom CSS and JS", "version": "3.50" },
+      { "name": "Temporary Login Without Password", "version": "1.9.1" },
+      { "name": "UpdraftPlus - Backup/Restore", "version": "1.26.13" },
+      { "name": "WooCommerce", "version": "10.7.0" },
+      { "name": "WooCommerce PayPal Payments", "version": "3.0.5" },
+      { "name": "WooCommerce.com Update Manager", "version": "1.0.3" },
+      { "name": "WP Activity Log", "version": "5.6.3.1" },
+      { "name": "WP File Manager", "version": "8.0.1" },
+      { "name": "WP Mail Logging", "version": "1.16.0" },
+      { "name": "WP Mail SMTP", "version": "4.4.0" },
+      { "name": "WPForms Lite", "version": "1.10.0.3" },
+      { "name": "WPvivid Backup Plugin", "version": "0.9.125" }
+    ],
+    "inactive_plugins": [
+      { "name": "ActivityPie Listings Admin UI", "version": "2.0.0" }
+    ],
+    "must_use_plugins": [
+      { "name": "Hostinger Smart Auto Updates", "version": "1.0.10" }
+    ],
+    "drop_ins": [
+      { "name": "object-cache.php", "description": "External object cache" }
     ]
   },
   "listeo_configuration": {
@@ -81,11 +134,35 @@
         ]
       }
     },
+    "timeslot_booking_form": {
+      "listing_type_slug": "service",
+      "multi_step_enabled": true,
+      "steps": [
+        {
+          "step": 1,
+          "title": "Listing Essentials",
+          "active_sections": ["Gallery", "Basic Information", "Social Media", "Location"]
+        },
+        {
+          "step": 2,
+          "title": "Offerings & Schedule",
+          "active_sections": ["Booking", "Booking prices and settings", "Availability and Pricing Calendar", "Time-Slots"]
+        },
+        {
+          "step": 3,
+          "title": "Final Details",
+          "active_sections": ["Pricing & Bookable Services", "Policy"]
+        }
+      ],
+      "removed_default_sections": ["Opening Hours", "FAQ", "Coupons", "My Listings", "Store Settings"],
+      "custom_booking_checkout_fields": ["Participants Personal Info"]
+    },
     "custom_fields_in_listeo_editor": {
       "service_tab": [
         {
           "label": "Service-Cancellation & Refund Policy",
           "meta_key": "_service_cancellation_refund_policy",
+          "type": "textarea",
           "mapped_in_csv": true,
           "csv_column": "Policy"
         }
