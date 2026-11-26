@@ -11,6 +11,7 @@ Thumbs.db
 dist/
 
 # Temporary / debug files
+~$*
 *.log
 *.tmp
 node_modules/
