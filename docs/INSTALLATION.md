@@ -54,19 +54,6 @@ Before installing, confirm that your WordPress site meets the following requirem
 
 ---
 
-## Updating / Upgrading the Plugin
-
-When a new release of `listeo-bulk-add-listings.zip` is published on [GitHub Releases](https://github.com/justinallahyari/ActivityPie-Bulk-Add-Plugin/releases) (for example, after adding a new CSV column or updating validation rules):
-
-1. Create a quick backup of your site (e.g., via UpdraftPlus or WPvivid) if deploying major changes.
-2. In WordPress Admin, go to **Plugins → Add New Plugin → Upload Plugin**.
-3. Select the new `listeo-bulk-add-listings.zip` and click **Install Now**.
-4. WordPress will detect that the plugin is already installed and display a comparison screen — click **Replace current with uploaded**.
-5. Clear any server/object cache (e.g., **LiteSpeed Cache → Purge All**) if the admin page does not reflect the changes immediately.
-6. Confirm the updated version number under **Plugins → Installed Plugins**.
-
----
-
 ## Uninstalling the Plugin
 
 1. Go to **Plugins → Installed Plugins**.
